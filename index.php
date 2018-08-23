@@ -1,64 +1,71 @@
 <?php
-include('autoloader.php');
-session_start();
-$products_obj = new Products();
-$products = $products_obj -> getProducts();
-$total_items = $products_obj -> total_products;
-$page_title = "Home page";
+include("includes/database.php");
+//check if connection is successful
+if($connection){
+  //echo "success";
+  $query = "SELECT name,price,description FROM products";
+  //run the query
+  $statement = $connection -> prepare($query);
+  $statement -> execute();
+  //get the result
+  $result = $statement -> get_result();
+}
+else{
+  echo "connection failed";
+}
 ?>
 <!doctype html>
 <html>
-  <head>
     <?php include("includes/head.php"); ?>
-
-  </head>
     <body>
-      <?php include("includes/navbar.php"); ?>
-      <?php include("includes/banner.php"); ?>
-      
-      <div class="container">
-        <!-- Project Section -->
-        <div class="w3-container w3-padding-8" id="projects">
-          <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Products</h3>
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">
+            Website Name
+          </a>
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="news.php">News</a></li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+      <div class="container">
         <?php
-          echo "<div class=\"row\">
-                <div class=\"col navbar\">
-                  <p class=\"navbar-text\">Total of $total_items products</p>
-                </div>
-              </div>";
-          if ( count($products) > 0 ) {
-            $col_counter = 0;
-            foreach( $products as $product ){
-              $col_counter++;
-              if( $col_counter == 1 ){
-                echo "<div class=\"row\">";
-              }
-              //print out columns
-              $id = $product["id"];
-              $name = $product["name"];
-              $price = $product["price"];
-              $image = $product["image"];
-              
-              echo "<div class=\"col-sm-3 product-column\">";
-              echo "<div class=\"card\">";
-              
-              echo "<img class=\"product-thumbnail img-fluid\" src=\"images/products/$image\" style=\"width:100%\">";
-              echo "<h4 class=\"product-name\">$name</h4>";
-              echo "<h4 class=\"price\">$price</h4>
-              <p style=\"margin:0;\"><button id=\"contactbutton\" onclick=\"window.location.href='productdetails.php?product_id=$id'\">View Me</button></p>
-              </div><p></p></div>";
-    
-              if($counter == 4){
-                echo "</div>";
-                $col_counter = 0;
-              }
+        if($result -> num_rows > 0){
+          $counter = 0;
+          while( $row = $result -> fetch_assoc() ){
+            $name = $row["name"];
+            $price = $row["price"];
+            $description = $row["description"];
+            
+            $counter++;
+            if($counter == 1){
+              //create boostrap row
+              echo "<div class=\"row\">";
             }
+            echo "<div class=\"col-md-3 col-sm-6 \">
+            <h3>$name</h3>
+            <h4 class=\"price\">$price</h4>
+            <p>$description</p>
+            </div>";
+            if($counter == 4){
+              echo "</div>";
+              $counter = 0;
+            }
+            // echo "<p>Product Name is $name and price is $ $price</p>";
           }
+        }
         ?>
-        
       </div>
-      <?php include("includes/footer.php"); ?>
     </body>
-    
 </html>
