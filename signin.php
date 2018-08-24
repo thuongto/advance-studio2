@@ -25,7 +25,7 @@
   <body>
     <?php include('includes/navbar.php'); ?>
     <div class="container content">
-      <div class="row" style="padding-top:100px;">
+      <div class="row" style="padding-top:10px;">
         <div class="col-md-4 offset-md-4">
           <?php
           if( count($account -> errors) > 0 ){
@@ -53,9 +53,9 @@
               <input id="password" class="form-control" type="password" name="password" placeholder="Your password" required>
               <div class="invalid-feedback">Please type a valid password</div>
             </div>
-            <div class="text-center">
-              <button type="submit" name="login" class="btn btn-outline-primary btn-block">Log in</button>
-            </div>
+            <!--<div class="text-center">-->
+            <!--  <button type="submit" name="login" class="btn btn-outline-primary btn-block">Log in</button>-->
+            <!--</div>-->
             <p class="my-4">Don't have an account? <a href="signup.php">Register</a> for a free account</p>
           </form>
         </div>
@@ -63,6 +63,7 @@
     </div>
     <!--<script src="/js/login.js"></script>-->
   </body>
+  <?php include("includes/footer.php"); ?>
 </html>
 
 <template id="alert-template">

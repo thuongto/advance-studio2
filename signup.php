@@ -58,7 +58,7 @@
       
       <p></p>
       <p></p>
-      <div class="row" style="padding-top:100px;">
+      <div class="row" style="padding-top:10px;">
         <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
           <h4>Register for an account</h4>
           <div class="alert-success"></div>
@@ -81,9 +81,9 @@
               <div class="invalid-feedback">Please enter a valid password which has at least 8 characters</div>
               <div class="alert-password"></div>
             </div>
-            <div class="text-center">
-              <button type="#" name="register-btn" class="btn btn-outline-success btn-block">Register</button>
-            </div>
+            <!--<div class="text-center">-->
+            <!--  <button type="submit" name="register-btn" class="btn btn-outline-success btn-block">Register</button>-->
+            <!--</div>-->
             <p class="my-4">Already have an account? <a href="signin.php">Sign in</a></p>
           </form>
         </div>
