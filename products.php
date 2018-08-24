@@ -23,20 +23,24 @@ if($connection){
 else{
   echo "connection failed";
 }
+$page_title = "Products List";
 ?>
 <!doctype html>
 <html>
-     <head>
-      <?php include("includes/head.php"); ?>
+  <head>
+    <?php include("includes/head.php"); ?>
 
-    </head>
+  </head>
     <body>
       <?php include("includes/navbar.php"); ?>
-      <?php include("includes/banner.php"); ?>
       
-       <p></p>
-       <p></p>
-       <h3>Products List</h3>
+      
+      <div class="container">
+        <!-- Project Section -->
+      <div class="w3-container w3-padding-8" id="projects" style="padding-top:100px;">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Products</h3>
+       
+       
       <div class="container">
         <?php
         if($result -> num_rows > 0){
@@ -67,4 +71,5 @@ else{
         ?>
       </div>
     </body>
+    <?php include("includes/footer.php"); ?>
 </html>
