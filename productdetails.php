@@ -25,7 +25,7 @@ $page_title = $product_name;
     <?php include('includes/navbar.php'); ?>
     <div class="container-fluid content">
       <?php
-      //include('includes/breadcrumb.php');
+      include('includes/breadcrumb.php');
       ?>
       <div class="row mt-4">
         <div class="col-sm-5">

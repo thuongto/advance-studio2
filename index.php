@@ -4,6 +4,8 @@ include('autoloader.php');
 $products_obj = new Products();
 $products = $products_obj -> getProducts();
 $total_items = $products_obj -> total_products;
+
+$page_title = "Home page";
 ?>
 <!doctype html>
 <html>

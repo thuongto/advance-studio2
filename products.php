@@ -16,8 +16,7 @@ $page_title = "Products List";
   </head>
     <body>
       <?php include("includes/navbar.php"); ?>
-      
-      
+
       <div class="container">
         <!-- Project Section -->
       <div class="w3-container w3-padding-8" id="projects">
