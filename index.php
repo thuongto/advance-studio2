@@ -46,7 +46,7 @@ $page_title = "Home page";
               echo "<div class=\"card\">";
               
               echo "<img class=\"product-thumbnail img-fluid\" src=\"images/products/$image\" style=\"width:100%\">";
-              echo "<h4 class=\"product-name\">$name</h4>";
+              echo "<h5 class=\"product-name\">$name</h4>";
               echo "<h4 class=\"price\">$price</h4>
               <p style=\"margin:0;\"><button id=\"contactbutton\" onclick=\"window.location.href='productdetails.php?product_id=$id'\">View Details</button></p>
               </div><p></p></div>";

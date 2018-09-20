@@ -1,23 +1,23 @@
 <?php
-// include('autoloader.php');
-// //handle POST request
-// if( $_SERVER["REQUEST_METHOD"] == "POST" ){
-//   $credentials = $_POST["credentials"];
-//   $password = $_POST["password"];
-//   //create instance of account class
-//   $account = new Account();
-//   $login = $account -> authenticate( $credentials, $password );
-//   if( $login == true ){
-//     //all good
-//     $destination = "index.php";
-//     header("location: $destination");
-//   }
-//   else{
-//     //get errors
-//     $errors = $account -> errors;
-//     echo count ( $account -> errors );
-//   }
-// }
+include('autoloader.php');
+//handle POST request
+if( $_SERVER["REQUEST_METHOD"] == "POST" ){
+  $credentials = $_POST["credentials"];
+  $password = $_POST["password"];
+  //create instance of account class
+  $account = new Account();
+  $login = $account -> authenticate( $credentials, $password );
+  if( $login == true ){
+    //all good
+    $destination = "index.php";
+    header("location: $destination");
+  }
+  else{
+    //get errors
+    $errors = $account -> errors;
+    echo count ( $account -> errors );
+  }
+}
 ?>
 <!doctype html>
 <html>
@@ -42,7 +42,7 @@
           ?>
           
           <h4>Login to your account</h4>
-          <form id="login-form" method="post" action="login.php" novalidate>
+          <form id="login-form" method="post" action="signin.php" novalidate>
             <div class="form-group">
               <label for="credentials">Email address or User name</label>
               <input id="credentials" class="form-control" type="text" name="credentials" placeholder="Username or Email" required>
@@ -53,15 +53,15 @@
               <input id="password" class="form-control" type="password" name="password" placeholder="Your password" required>
               <div class="invalid-feedback">Please type a valid password</div>
             </div>
-            <!--<div class="text-center">-->
-            <!--  <button type="submit" name="login" class="btn btn-outline-primary btn-block">Log in</button>-->
-            <!--</div>-->
+            <div class="text-center">
+              <button type="submit" name="login" class="btn btn-outline-primary btn-block">Log in</button>
+            </div>
             <p class="my-4">Don't have an account? <a href="signup.php">Register</a> for a free account</p>
           </form>
         </div>
       </div>
     </div>
-    <!--<script src="/js/login.js"></script>-->
+    <script src="/js/login.js"></script>
   </body>
   <?php include("includes/footer.php"); ?>
 </html>

@@ -1,30 +1,30 @@
 <?php
-// include('autoloader.php');
-// session_start();
+include('autoloader.php');
+session_start();
 
-// //check for POST request
-// if( $_SERVER['REQUEST_METHOD'] == 'POST'){
-//   //receive variables from form
-//   $username = $_POST["username"];
-//   $email = $_POST["email"];
-//   $password = $_POST["password"];
+//check for POST request
+if( $_SERVER['REQUEST_METHOD'] == 'POST'){
+  //receive variables from form
+  $username = $_POST["username"];
+  $email = $_POST["email"];
+  $password = $_POST["password"];
   
-//   $account = new Account();
-//   $registration = $account -> register( $username, $email, $password );
+  $account = new Account();
+  $registration = $account -> register( $username, $email, $password );
   
-//   $success = array();
-//   $errors = array();
+  $success = array();
+  $errors = array();
   
-//   if( $registration == true ){
-//     $success["registration"] = "Account successfully created!";
-//   }
-//   else{
-//     //$errors["registration"] = "There has been an error!";
-//     $errors["username"] = $account -> errors["username"];
-//     $errors["email"] = $account -> errors["email"];
-//     $errors["password"] = $account -> errors["password"];
-//   }
-// }
+  if( $registration == true ){
+    $success["registration"] = "Account successfully created!";
+  }
+  else{
+    //$errors["registration"] = "There has been an error!";
+    $errors["username"] = $account -> errors["username"];
+    $errors["email"] = $account -> errors["email"];
+    $errors["password"] = $account -> errors["password"];
+  }
+}
 ?>
 
 <!doctype html>
@@ -62,7 +62,7 @@
         <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
           <h4>Register for an account</h4>
           <div class="alert-success"></div>
-          <form id="register-form" method="post" action="register.php" novalidate>
+          <form id="register-form" method="post" action="signup.php" novalidate>
             <div class="form-group">
               <label for="username">Username</label>
               <input id="username" class="form-control" type="text" name="username" placeholder="Username" required>
@@ -81,15 +81,15 @@
               <div class="invalid-feedback">Please enter a valid password which has at least 8 characters</div>
               <div class="alert-password"></div>
             </div>
-            <!--<div class="text-center">-->
-            <!--  <button type="submit" name="register-btn" class="btn btn-outline-success btn-block">Register</button>-->
-            <!--</div>-->
+            <div class="text-center">
+              <button type="submit" name="register-btn" class="btn btn-outline-success btn-block">Register</button>
+            </div>
             <p class="my-4">Already have an account? <a href="signin.php">Sign in</a></p>
           </form>
         </div>
       </div>
     </div>
-    <!--<script src="/js/register.js"></script>-->
+    <script src="/js/register.js"></script>
     <?php include("includes/footer.php"); ?>
   </body>
 </html>
