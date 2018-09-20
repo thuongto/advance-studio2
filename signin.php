@@ -1,6 +1,6 @@
 <?php
 include('autoloader.php');
-//handle POST request
+ //handle POST request
 if( $_SERVER["REQUEST_METHOD"] == "POST" ){
   $credentials = $_POST["credentials"];
   $password = $_POST["password"];
@@ -25,7 +25,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
   <body>
     <?php include('includes/navbar.php'); ?>
     <div class="container content">
-      <div class="row" style="padding-top:10px;">
+      <div class="row">
         <div class="col-md-4 offset-md-4">
           <?php
           if( count($account -> errors) > 0 ){
@@ -40,7 +40,6 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
           }
          
           ?>
-          
           <h4>Login to your account</h4>
           <form id="login-form" method="post" action="signin.php" novalidate>
             <div class="form-group">
@@ -56,21 +55,19 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
             <div class="text-center">
               <button type="submit" name="login" class="btn btn-outline-primary btn-block">Log in</button>
             </div>
-            <p class="my-4">Don't have an account? <a href="signup.php">Register</a> for a free account</p>
+            <p class="my-4">Don't have an account? <a href="signin.php">Register</a> for a free account</p>
           </form>
         </div>
       </div>
     </div>
-    <script src="/js/login.js"></script>
+    <!--<script src="/js/login.js"></script>-->
   </body>
-  <?php include("includes/footer.php"); ?>
 </html>
-
-<template id="alert-template">
+ <template id="alert-template">
   <div class="alert alert-dismissible fade show" role="alert">
     <span class="alert-message"></span>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-</template>
+</template> 

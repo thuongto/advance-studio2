@@ -1,3 +1,8 @@
+<?php
+$nav_obj = new Navigation();
+$navigation = $nav_obj -> getNavigationItems();
+?>
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <a class="navbar-brand" href="index.php">Beer World.</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,14 +30,36 @@
     </form>
     
   <!--Signup & Signin icon -->
-    <ul class="navbar-nav justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link" href="signup.php"><i class="fas fa-user-plus"></i> Sign Up</a>
+    <!--<ul class="navbar-nav justify-content-end">-->
+    <!--  <li class="nav-item">-->
+    <!--    <a class="nav-link" href="signup.php"><i class="fas fa-user-plus"></i> Sign Up</a>-->
+    <!--  </li>-->
+    <!--  <li class="nav-item">-->
+    <!--    <a class="nav-link" href="signin.php"><i class="fas fa-sign-in-alt"></i> Sign In</a>-->
+    <!--  </li>-->
+    <!--</ul>-->
+    
+    <?php
+    if( $_SESSION["username"] ){
+      $user = $_SESSION["username"];
+      echo "<span class=\"navbar-text\"> Hello, $user!</span>";
+      echo "<ul class=\"navbar-nav justify-content-end\">
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"signout.php\"><i class=\"fas fa-sign-out-alt\"></i> Sign Out</a>
+            </li>
+            </ul>";
+    }
+    else{
+      echo "<ul class=\"navbar-nav justify-content-end\">
+      <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"signup.php\"><i class=\"fas fa-user-plus\"></i> Sign Up</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="signin.php"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+      <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"signin.php\"><i class=\"fas fa-sign-in-alt\"></i> Sign in</a>
       </li>
-    </ul>
+      </ul>";
+    }
+    ?>
   </div>
 </nav>
 
