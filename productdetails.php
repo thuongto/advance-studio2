@@ -6,8 +6,8 @@ if( isset($_GET["product_id"]) ){
   $product_id = $_GET["product_id"];
   
   $product_detail = new ProductDetail( $product_id );
-  $product = $product_detail -> product;
-  
+  $product = $product_detail -> product;  
+  $product_id = $product[0]["id"];
   $product_name = $product[0]["name"];
   $product_price = $product[0]["price"];
   $product_description = $product[0]["description"];
@@ -22,7 +22,7 @@ $page_title = $product_name;
 <html>
   <?php include ('includes/head.php'); ?>
   <body>
-    <?php include('includes/navbar.php'); ?>
+    <?php include('includes/navbar.php'); ?> 
     <div class="container-fluid content">
       <?php
       include('includes/breadcrumb.php');
@@ -37,8 +37,8 @@ $page_title = $product_name;
               echo "<img class=\"img-fluid\" src=\"/images/products/$image\">";
             }
             else{
-              //output carousel
-              echo" <div id=\"product-detail-carousel\" class=\"carousel slide\" data-ride=\"carousel\">
+              //output carousel // id=\"product-detail-carousel\" class=\"carousel slide\" data-ride=\"carousel\">
+              echo" <div class=\"detailImage\">
                 <ol class=\"carousel-indicators image-indicators\">";
                   $indicator_counter = 0;
                   foreach( $product as $indicator){
@@ -50,8 +50,8 @@ $page_title = $product_name;
                       unset( $class );
                     }
                     echo "<li data-target=\"#product-detail-carousel\" data-slide-to=\"$indicator_counter\" class=\"$class\">
-                      <img src=\"/images/products/$indicator_image\" class=\"img-fluid\">
-                    </li>";
+                            <img src=\"/images/products/$indicator_image\" class=\"img-fluid\">
+                          </li>";
                     $indicator_counter++;
                   }
                 echo "</ol>";
@@ -66,9 +66,9 @@ $page_title = $product_name;
                     else{
                       unset( $class );
                     }
-                    echo "<div class=\"carousel-item $class\">
-                      <img class=\"d-block w-100\" src=\"/images/products/$image\" alt=\"$name\">
-                    </div>";
+                    echo "<div class=\"carousel-item $class\" style=\"text-align: center;\">
+                            <img class=\"center\" src=\"/images/products/$image\" alt=\"$name\" style=\"width:50%; margin-top: 0px;\"> 
+                        </div>";
                     $image_counter++;
                   }
                 echo "</div>";
@@ -84,11 +84,43 @@ $page_title = $product_name;
           <p class="price">
             <?php echo $product_price; ?>
           </p>
+           <!--form for shopping cart and wishlist-->
+          <form id="shopping-form" class="my-2 form-inline">
+            <div class="form-row w-100">
+              <div class="col-8 col-md-3 input-group">
+                <div class="input-group product-quantity my-2 my-md-0">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-primary" data-function="subtract" type="button">&minus;</button>
+                  </div>
+                  <input type="text" name="quantity" value="1" min="1" class="form-control border-primary text-center flex-fill">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-primary" data-function="add" type="button">&plus;</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-7">
+                <input name="product_id" type="hidden" value="<?php echo $product_id; ?>">
+                <button class="btn btn-outline-primary" type="submit" name="submit" value="shoppingcart">
+                  <img class="icon d-inline-block" src="images/icons/shoppingcart.png">
+                  Add to cart
+                </button>
+                <button class="btn btn-outline-primary" type="submit" name="submit" value="wishlist">
+                  <img class="icon d-inline-block" src="images/icons/wishlist.png">
+                  Wishlist
+                </button>
+              </div>
+            </div>
+          </form>
+          <!--end shopping form-->
           <p class="description">
             <?php echo $product_description; ?>
           </p>
         </div>
       </div>
     </div>
+    
+    <script src = "js/product-details.js"></script>
+    <script src = "js/shopping-cart.js"></script>
+    
   </body>
 </html>

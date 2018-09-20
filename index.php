@@ -60,5 +60,6 @@ $page_title = "Home page";
           }
         ?>
       </div>
+      <?php include("includes/footer.php"); ?>
     </body>
 </html>

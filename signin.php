@@ -61,6 +61,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
       </div>
     </div>
     <!--<script src="/js/login.js"></script>-->
+    <?php include("includes/footer.php"); ?>
   </body>
 </html>
  <template id="alert-template">
