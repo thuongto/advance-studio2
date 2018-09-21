@@ -55,10 +55,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
         </div>";
       }
       ?>
-      
-      <p></p>
-      <p></p>
-      <div class="row" style="padding-top:10px;">
+      <div class="row">
         <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
           <h4>Register for an account</h4>
           <div class="alert-success"></div>
@@ -84,7 +81,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="text-center">
               <button type="submit" name="register-btn" class="btn btn-outline-success btn-block">Register</button>
             </div>
-            <p class="my-4">Already have an account? <a href="signin.php">Sign in</a></p>
+            <p class="my-4">Already have an account? <a href="login.php">Sign in</a></p>
           </form>
         </div>
       </div>

@@ -7,7 +7,8 @@ function updateCount( tgt, count ){
     $('#wish-count').text( count );
   }
 }
- $(document).ready(
+
+$(document).ready(
   () => {
     $('#shopping-form').submit(
       (event) => {
@@ -18,7 +19,8 @@ function updateCount( tgt, count ){
     $('#shopping-form').click(
       (event) => {
         //add spinner to the button
-        const spinner = '<img class="icon spinner" src="/images/graphics/icons/moc-spin-circle.png">'; //get the value of the target button either 'shoppingcart' or 'wishlist'
+        const spinner = '<img class="icon spinner" src="/images/graphics/icons/moc-spin-circle.png">';
+        //get the value of the target button either 'shoppingcart' or 'wishlist'
         let tgtVal = $(event.target).val();
         if( tgtVal == 'shoppingcart'){
           $(event.target).append(spinner);
@@ -29,6 +31,7 @@ function updateCount( tgt, count ){
           const productId = $('input[name="product_id"]').val();
           
           const cartData = { quantity: qty, productId : productId, action: 'add' };
+          
           //send cardData via ajax request\
           $.ajax({
             url: '/ajax/shoppingcart.ajax.php',

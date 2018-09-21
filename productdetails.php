@@ -1,6 +1,7 @@
 <?php
 include("autoloader.php");
 session_start();
+
 if( isset($_GET["product_id"]) ){
   
   $product_id = $_GET["product_id"];
@@ -16,6 +17,7 @@ else{
   echo "You will be redirected to the home page after 5 seconds";
   header( "location:index.php" );
 }
+
 $page_title = $product_name;
 ?>
 <!doctype html>
@@ -31,6 +33,7 @@ $page_title = $product_name;
         <div class="col-sm-5">
           <?php
           $count = count( $product );
+
           if( $count > 0 ){
             if( $count == 1 ){
               $image = $product[0]["image"];
@@ -124,3 +127,4 @@ $page_title = $product_name;
     
   </body>
 </html>
+

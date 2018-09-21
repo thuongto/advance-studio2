@@ -21,10 +21,8 @@ class Navigation{
       $this -> nav_items = array(
       "Home" => "index.php",
       "About" => "about.php",
-      "Products" => "productlist.php"
+      "Products" => "products.php"
       );
-      
-      
       
       //right items
       $this -> nav_right_items = array(

@@ -1,12 +1,12 @@
 <?php
-// include('autoloader.php');
-// session_start();
+include('autoloader.php');
+session_start();
 
-// $products_obj = new Products();
-// $products = $products_obj -> getProducts();
-// $total_items = $products_obj -> total_products;
+$products_obj = new Products();
+$products = $products_obj -> getProducts();
+$total_items = $products_obj -> total_products;
 
-// $page_title = "About Us";
+$page_title = "About Us";
 ?>
 <!doctype html>
 <html>

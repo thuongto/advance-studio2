@@ -15,7 +15,6 @@ $right_navigation = $nav_obj -> getNavigationRightItems();
     <ul class="navbar-nav mr-auto">
       <?php
         if( count($navigation) > 0 ){
-          
           foreach( $navigation as $name => $link ){
             //if the link matches the current page, set active as 'active'
             if( $link == $nav_obj -> current_page ){
@@ -70,7 +69,6 @@ $right_navigation = $nav_obj -> getNavigationRightItems();
                   <li class=\"nav-item $active\">
                     <a class=\"nav-link\" href=\"/$link\"><i class=\"fas fa-user-plus\"></i> $name <span class=\"sr-only\">(current)</span></a>
                   </li>";
-              
             }
             else {
               echo "<ul class=\"navbar-nav justify-content-end\">
@@ -80,6 +78,9 @@ $right_navigation = $nav_obj -> getNavigationRightItems();
             }
           }
         }
+        
+
+              
     }
     ?>
     
@@ -94,7 +95,7 @@ $right_navigation = $nav_obj -> getNavigationRightItems();
       <img class="icon" src="images/icons/bag.png">
       <span id="cart-count" class="badge badge-primary"><?php echo $cart_count; ?></span>
     </a>
-   
+
   </div>
 
   

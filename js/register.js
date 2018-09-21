@@ -1,14 +1,17 @@
 // This file has changed so errors are now shown using Bootstrap's built in classes
 //read http://getbootstrap.com/docs/4.1/components/forms/#validation
- function removeAlerts() {
+
+function removeAlerts() {
   //remove all alerts
   $('.alert').remove();
 }
- function removeAlert(event) {
+
+function removeAlert(event) {
   //remove alert from particular inputs
   $(event.target).parents('.form-group').find('.alert').remove();
 }
- function showAlert(templateId,type,forElement,message){
+
+function showAlert(templateId,type,forElement,message){
   //get reference to the template
   let template = $('#'+templateId).html().trim();
   let clone = $(template);
@@ -17,13 +20,15 @@
   //$(forElement).parents('.form-group').append(clone);
   $('#'+forElement).append(clone);
 }
- function showInvalid(inputelm,msg){
+
+function showInvalid(inputelm,msg){
   let targetinput = 'input[name="'+inputelm+'"]';
   //add bootstrap validation class and change message
   $(targetinput).addClass('is-invalid');
   $(targetinput).parents('.form-group').find('.invalid-feedback').text(msg);
 }
- function validateForm(form_elm) {
+
+function validateForm(form_elm) {
   //simple form validation
   let inputs = $(form_elm).find('input');
   //check each input after converting into an array
@@ -51,8 +56,8 @@ $(document).ready(
       let registerdata = { username: username, email: email, password: password };
       console.log(registerdata);
       //add spinner to button
-      let spinner = '<img class="spinner" src="/images/graphics/spinner1.gif">';
-      $('button[name="register-btn"]').append(spinner);
+      //let spinner = '<img class="spinner" src="/images/graphics/spinner1.gif">';
+      //$('button[name="register-btn"]'));//.append(spinner);
       $('button[name="register-btn"]').attr('disabled', '');
       $.ajax({
           url: '/ajax/register.ajax.php',
@@ -62,7 +67,7 @@ $(document).ready(
         })
         .done((response) => {
           //remove spinner from button
-          $('button[name="register-btn"] img').remove();
+          //$('button[name="register-btn"] img').remove();
           // remove all alerts
           removeAlerts();
           if (response.success == false) {

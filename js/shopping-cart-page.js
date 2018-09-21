@@ -3,13 +3,15 @@
 - /classes/shoppingcart.class.php
 - /shoppingcart.php (loaded by the page)
 */
- $(document).ready( () => {
+
+$(document).ready( () => {
   
   const spinner = `<img class="icon spinner" src="/images/graphics/icons/moc-spin-circle.png">`;
   const checkmark = `<img class="icon check" src="/images/graphics/icons/moc-check.png">`;
   //get the shopping list and render it
   const content = getCartContents();
-   //shopping list listener
+
+  //shopping list listener
   //listen for click on shopping cart list and update or delete item(s)
   $('#shopping-list').click( (event) => {
     let target = event.target;
@@ -80,7 +82,8 @@
   });
   
 });
- //called when user updates cart
+
+//called when user updates cart
 //needs to be called after quantity changes
 function updateCartItem( targetElement ){
   //remove checkmark if present
@@ -123,7 +126,8 @@ function getCartTotal(){
   //fix the total to 2 decimals
   return total.toFixed(2);
 }
- function getCartData( cartData, callback ){
+
+function getCartData( cartData, callback ){
   $.ajax({
     url: '/ajax/shoppingcart.ajax.php',
     method: 'post',
@@ -219,4 +223,4 @@ function getCartContents(){
       return false;
     }
   });
-} 
+}
