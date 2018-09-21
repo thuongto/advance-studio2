@@ -104,13 +104,9 @@ $page_title = $product_name;
               <div class="col-12 col-md-7">
                 <input name="product_id" type="hidden" value="<?php echo $product_id; ?>">
                 <button class="btn btn-outline-primary" type="submit" name="submit" value="shoppingcart">
-                  <img class="icon d-inline-block" src="images/icons/shoppingcart.png">
-                  Add to cart
+                  <span>Add to cart</span>
                 </button>
-                <button class="btn btn-outline-primary" type="submit" name="submit" value="wishlist">
-                  <img class="icon d-inline-block" src="images/icons/wishlist.png">
-                  Wishlist
-                </button>
+               
               </div>
             </div>
           </form>

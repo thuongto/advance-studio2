@@ -1,3 +1,4 @@
+
 <?php
 $nav_obj = new Navigation();
 $navigation = $nav_obj -> getNavigationItems();
@@ -5,14 +6,16 @@ $navigation = $nav_obj -> getNavigationItems();
 $right_navigation = $nav_obj -> getNavigationRightItems();
 ?>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-  <a class="navbar-brand" href="index.php">Beer World.</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a class="w3-bar-item w3-button" href="index.php">Beer World.</a><div class="w3-right w3-hide-small">
+    <!--Search -->
+  <form class="w3-left"  method="get" action="search.php">
+    <div class="input-group" style="padding-left: 50px; padding-right: 150px; margin-top: 0;">
+    <input class="form-control" type="search" name="keywords" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search</button>
+    </div>
+  </form>
       <?php
         if( count($navigation) > 0 ){
           foreach( $navigation as $name => $link ){
@@ -24,79 +27,58 @@ $right_navigation = $nav_obj -> getNavigationRightItems();
               unset($active);
             }
             
-            echo "<li class=\"nav-item $active\">
-                    <a class=\"nav-link\" href=\"/$link\">$name <span class=\"sr-only\">(current)</span></a>
-                  </li>";
+            echo "
+                    <a class=\"w3-bar-item w3-button\" href=\"/$link\">$name </a>
+                  ";
           }
         }
       ?>
-    </ul>
-    
-     
-    <!-- Search -->
-    <form class="form-inline my-2 my-lg-0" method="get" action="search.php" style="padding-right: 5px;">
-      <input class="form-control mr-sm-2" type="search" name="keywords" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    
     
     <!-- SignUp SignIn -->
-    <?php
-    if( $_SESSION["username"] ){
-      $user = $_SESSION["username"];
-      echo "<span class=\"navbar-text\">Hello, $user!</span>";
-      echo "<ul class=\"navbar-nav justify-content-end\">
-            <li class=\"nav-item\">
-              <a class=\"nav-link\" href=\"signout.php\"><i class=\"fas fa-sign-out-alt\"></i> Sign Out</a>
-            </li>
-            </ul>";
-    }
-    else{
-      if( count($right_navigation) > 0 ){
-          
-          foreach( $right_navigation as $name => $link ){
-            //if the link matches the current page, set active as 'active'
-            if( $link == $nav_obj -> current_page ){
-              $active = "active";
-            }
-            else{
-              unset($active);
-            }
-            
-            if($name == "Sign Up")
-            {
-              echo "<ul class=\"navbar-nav justify-content-end\">
-                  <li class=\"nav-item $active\">
-                    <a class=\"nav-link\" href=\"/$link\"><i class=\"fas fa-user-plus\"></i> $name <span class=\"sr-only\">(current)</span></a>
-                  </li>";
-            }
-            else {
-              echo "<ul class=\"navbar-nav justify-content-end\">
-                  <li class=\"nav-item $active\">
-                    <a class=\"nav-link\" href=\"/$link\"><i class=\"fas fa-sign-in-alt\"></i> $name <span class=\"sr-only\">(current)</span></a>
-                  </li>";
-            }
-          }
+    <div class="w3-dropdown-hover">
+      <button class="w3-button" style="letter-spacing: 4px;">Account</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <?php
+        if( $_SESSION["username"] ){
+          $user = $_SESSION["username"];
+          echo "<a class=\"w3-bar-item w3-button\">Hello, $user!</a>";
+          echo "<a class=\"w3-bar-item w3-button\" href=\"signout.php\"><i class=\"fas fa-sign-out-alt\"></i> Sign Out</a>";
         }
-        
-
+        else{
+          if( count($right_navigation) > 0 ){
               
-    }
-    ?>
-    
-    
-  </div>
-<div class="cart-group d-flex align-self-center order-8 order-md-9">
+              foreach( $right_navigation as $name => $link ){
+                //if the link matches the current page, set active as 'active'
+                if( $link == $nav_obj -> current_page ){
+                  $active = "active";
+                }
+                else{
+                  unset($active);
+                }
+                
+                if($name == "Sign Up")
+                {
+                  echo "<a class=\"w3-bar-item w3-button\" href=\"/$link\"><i class=\"fas fa-user-plus\"></i> $name <span class=\"sr-only\">(current)</a>";
+                }
+                else {
+                  echo "<a class=\"w3-bar-item w3-button\" href=\"/$link\"><i class=\"fas fa-sign-in-alt\"></i> $name </a>";
+                }
+              }
+            }
+        }
+        ?>
+      </div>
+    </div>
+    <!--SHOPPING CART-->
     <?php
-    $cart = new ShoppingCart();
-    $cart_count = $cart -> getCartCount();
+      $cart = new ShoppingCart();
+      $cart_count = $cart -> getCartCount();
     ?>
-    <a href="shoppingcart.php" class="nav-icon cart mx-1">
-      <img class="icon" src="images/icons/bag.png">
+    <a href="shoppingcart.php" class="w3-bar-item w3-button">
+      <img class="icon" src="images/icons/shoppingcart.png">
       <span id="cart-count" class="badge badge-primary"><?php echo $cart_count; ?></span>
     </a>
-
-  </div>
-
-  
-</nav>
+  </div>  
+</div>
+</div>
+</script>

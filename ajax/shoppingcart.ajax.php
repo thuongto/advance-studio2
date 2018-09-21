@@ -30,7 +30,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
       //response should contain redirect page, product id and quantity
       if( isset($cart -> errors['auth']) ){
         $errors['auth'] = 'not authorized';
-        $response["redirect"] = "login.php";
+        $response["redirect"] = "signin.php";
         //add item and quantity to response
         $response["product_id"] = $product_id;
         $response["quantity"] = $quantity;
@@ -49,7 +49,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST"){
     }
     else{
       $response["success"] = false;
-      $response["redirect"] = "login.php";
+      $response["redirect"] = "signin.php";
       $response["origin"] = "shoppingcart.php";
     }
     $errors = $cart -> errors;
