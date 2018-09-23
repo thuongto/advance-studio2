@@ -13,15 +13,15 @@ class Navigation{
     
     if( $this -> checkUserAuthState() == true ){
       $this -> nav_items = array(
-      "Home" => "index.php",
+      //"Home" => "index.php",
       "Sign Out" => "signout.php"
       );
     }
     else{
       $this -> nav_items = array(
-      "Home" => "index.php",
+      //"Home" => "index.php",
       "About" => "about.php",
-      "Products" => "products.php"
+      // "Products" => "products.php"
       );
       
       //right items

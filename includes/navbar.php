@@ -33,7 +33,17 @@ $right_navigation = $nav_obj -> getNavigationRightItems();
           }
         }
       ?>
-    
+      
+    <a class="w3-bar-item w3-button\" href="index.php#contact">Contact </a> 
+    <div class="w3-dropdown-hover">
+      <button class="w3-button" style="letter-spacing: 4px;">Categories</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a class="w3-bar-item w3-button" href="index.php#bestseller"><i class=\"fas fa-sign-in-alt\"></i>Best Seller</a>
+        <a class="w3-bar-item w3-button" href="index.php#feature"><i class=\"fas fa-sign-in-alt\"></i>Recommendations</a>
+        <a class="w3-bar-item w3-button" href="index.php#productslist"><i class=\"fas fa-sign-in-alt\"></i>Products List</a>
+        <a class="w3-bar-item w3-button" href="index.php#country"><i class=\"fas fa-sign-in-alt\"></i>Country</a>
+      </div>
+    </div>
     <!-- SignUp SignIn -->
     <div class="w3-dropdown-hover">
       <button class="w3-button" style="letter-spacing: 4px;">Account</button>

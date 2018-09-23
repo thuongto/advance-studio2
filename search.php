@@ -13,11 +13,7 @@ $page_title = $search_words;
   <?php include ('includes/head.php'); ?>
   <body>
     <?php include('includes/navbar.php'); ?>
-    
     <div style="margin-top: 100px" class="container content">
-      
-      
-      
       <?php
       
       include('includes/breadcrumb.php');
