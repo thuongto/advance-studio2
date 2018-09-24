@@ -20,7 +20,7 @@
 
 
 <!--Germany -->
-<div id="Germany" class="w3-container">
+<div id="Germany" class="w3-container" style="width: 80%;">
   <div class="w3-container w3-padding-32">
   <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Germany Beers</h3>
   </div>
@@ -63,7 +63,7 @@
 
 
  <!--New Zany -->
-<div id="NewZealand" class="w3-container">
+<div id="NewZealand" class="w3-container" style="width: 80%;">
   <div class="w3-container w3-padding-32">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">New Zealand Beers</h3>
   </div>
@@ -78,7 +78,7 @@
     foreach( $newzrproduct as $p ){
       $col_counter++;
       if( $col_counter == 1 ){
-        echo "<div class=\"row\" style=\"width:80%\">";
+        echo "<div class=\"row\" >";
       }
       //print out columns
       $gid = $p["id"];
@@ -105,7 +105,7 @@
 </div>
 
  <!--France -->
-<div id="France" class="w3-container">
+<div id="France" class="w3-container" style="width: 80%;">
   <div class="w3-container w3-padding-32">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">France Beers</h3>
   </div>
@@ -148,7 +148,7 @@
 
  <!--Australia -->
  <!--France -->
-<div id="Australia" class="w3-container">
+<div id="Australia" class="w3-container" style="width: 80%;">
   <div class="w3-container w3-padding-32">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Australia Beers</h3>
   </div>
@@ -188,48 +188,3 @@
   }
 ?>
 </div>
-
-<!--Product List -->
-<div id="productslist" class="w3-container">
-  <div class="w3-container w3-padding-32">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">All Products</h3>
-  </div>
-  <?php
-    echo "<div class=\"row\">
-            <div class=\"col navbar\">
-              <p class=\"navbar-text\">Total of $total_products products</p>
-            </div>
-          </div>";
-    if( count($products) > 0 ){
-      $col_counter = 0;
-      foreach( $products as $p ){
-        $col_counter++;
-        if( $col_counter == 1 ){
-          echo "<div class=\"row\">";
-        }
-        //print out columns
-        $gid = $p["id"];
-        $gname = $p["name"];
-        $gprice = $p["price"];
-        $gimage = $p["image"];
-        
-        echo "<div class=\"col-sm-3 product-column\">";
-        echo "<div class=\"card\">";
-        
-        echo "<img class=\"product-thumbnail img-fluid\" src=\"images/products/$gimage\" style=\"width:100%\">";
-        echo "<h4 class=\"product-name\">$gname</h4>";
-        echo "<h4 class=\"price\">$gprice</h4>
-        <p style=\"margin:0;\"><button id=\"contactbutton\" onclick=\"window.location.href='productdetails.php?product_id=$gid'\">View Details</button></p>
-        </div><p></p></div>";
-  
-        if($counter == 3){
-          echo "</div>";
-          $col_counter = 0;
-        }
-      }
-    }
-?>
-</div>
-   
-
-
