@@ -1,26 +1,34 @@
-<footer>
-  <div class="footer" style="width:100%;">
-        <!--The Contact Section -->
-    <div id="contact" class="jumbotron jumbotron-fluid text-center" style="width:100%;">
-      <h2 class="w3-wide w3-center">CONTACT</h2>
-      <p class="w3-opacity w3-center"><i>We have two stores in the country!</i></p>
-      <div class="w3-row">
-        <div class="w3-col m6">
-          <h2>Store 1</h2>
-          <i class="fa fa-map-marker" style="width:30px"></i> HCMC, Vietnam<br>
-          <i class="fa fa-phone" style="width:30px"></i> Phone: +848 2222 2222<br>
-          <i class="fa fa-envelope" style="width:30px"> </i> Email: contactHCMC@beersworld.com<br>
-        </div>
-        <div class="w3-col m6">
-          <h2>Store 2</h2>
-          <i class="fa fa-map-marker" style="width:30px"></i> Hanoi, Vietnam<br>
-          <i class="fa fa-phone" style="width:30px"></i> Phone: +848 3333 3333<br>
-          <i class="fa fa-envelope" style="width:30px"> </i> Email: contactHaNoi@beersworld.com<br>
-        </div>
+
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4">
+        <h4>Responsibilitis</h4>
+        <p><a href="#">Terms & Conditions</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">Responsible Service of Alcohol</a></p>
       </div>
-        
-      <h3>BEERS WORLD. </h3>
-      <p> Copyright 2018 Beers World. All rights reserved. </p>
-    </div>
-  </div>
-</footer>
+      <div class="w3-col s4">
+        <h4>About</h4>
+        <p><a href="about.php">About us</a></p>
+        <p><a href="#">Shipment</a></p>
+        <p><a href="#">Payment</a></p>
+        <p><a href="#">Return</a></p>
+      </div>
+
+      <div class="w3-col s4 w3-justify">
+        <h4>Opening Hours</h4>
+        <p><i class="fa fa-clock"></i> Monday - Friday: 9:00AM - 10:00PM</p>
+        <p><i class="fa fa-clock"></i> Sat - Sunday: 9:00AM - Midnight</p>
+        <p><i class="fa fa-calendar"></i> Public Holiday: Closed</p>
+        <br>
+        </div>
+    </div
+    
+    <div class="w3-row-padding">
+      <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-center"></i>To the top</a>
+      </div>
+  </footer>
+  <div class="w3-black w3-center w3-padding-24">Copyright 2018 Beers World. All rights reserved. </div>
+
+  <!-- End page content -->

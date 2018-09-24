@@ -29,28 +29,14 @@ $page_title = "Home page";
     <body style="letter-spacing: 4px;">
       <?php include("includes/navbar.php"); ?>
       <?php include("includes/banner.php"); ?>
-      
+        
       <?php include("includes/categories.php"); ?>
       <?php include("includes/bestseller.php"); ?>
       <?php include("includes/featureproduct.php"); ?>
+       <?php include("includes/allproduct.php"); ?> 
+      <?php include("includes/country.php"); ?>
       
-     
-      
-      
-      
-
-   
-    
-     <?php include("includes/country.php"); ?>
-    
-  
-
-
-
-    
-
-    
-    <?php include("includes/content.php"); ?>
+      <?php include("includes/content.php"); ?>
     <div class="row"></div>
     </div> 
     <div class="row"></div>

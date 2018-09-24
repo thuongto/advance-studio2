@@ -24,7 +24,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
   <?php include ('includes/head.php'); ?>
   <body>
     <?php include('includes/navbar.php'); ?>
-    <div class="container content">
+    <div class="container content w3-padding-64">
       <div class="row">
         <div class="col-md-4 offset-md-4">
           <?php
@@ -40,10 +40,10 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
           }
          
           ?>
-          <h4>Login to your account</h4>
+          <center><h1>Sign In</h1></center>
           <form id="login-form" method="post" action="signin.php" novalidate>
             <div class="form-group">
-              <label for="credentials">Email address or User name</label>
+              <label for="credentials">Username</label>
               <input id="credentials" class="form-control" type="text" name="credentials" placeholder="Username or Email" required>
               <div class="invalid-feedback">Please type a valid username or email</div>
             </div>

@@ -32,7 +32,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
   <?php include ('includes/head.php'); ?>
   <body>
     <?php include('includes/navbar.php'); ?>
-    <div class="container content">
+    <div class="container content w3-padding-64">
       <?php
       if( count($success) > 0 ){
         $msg = implode( " ", $success );
@@ -57,7 +57,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
       ?>
       <div class="row">
         <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
-          <h4>Register for an account</h4>
+          <center><h1>Sign Up</h1></center>
           <div class="alert-success"></div>
           <form id="register-form" method="post" action="signup.php" novalidate>
             <div class="form-group">
@@ -79,7 +79,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
               <div class="alert-password"></div>
             </div>
             <div class="text-center">
-              <button type="submit" name="register-btn" class="btn btn-outline-success btn-block">Register</button>
+              <button type="submit" name="register-btn" class="btn btn-outline-primary btn-block">Register</button>
             </div>
             <p class="my-4">Already have an account? <a href="login.php">Sign in</a></p>
           </form>

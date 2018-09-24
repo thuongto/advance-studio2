@@ -121,6 +121,10 @@ $page_title = $product_name;
     <script src = "js/product-details.js"></script>
     <script src = "js/shopping-cart.js"></script>
     
+    
+    <?php include("includes/featureproduct.php"); ?>
+    <?php include("includes/footer.php"); ?>
+
   </body>
 </html>
 

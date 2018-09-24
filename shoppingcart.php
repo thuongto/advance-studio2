@@ -20,6 +20,8 @@ $page_title = "Shopping Cart";
     </div>
     </div>
     <script src="/js/shopping-cart-page.js"></script>
+    <br>
+    <br>
     <?php include("includes/footer.php"); ?>
   </body>
   </html>

@@ -16,22 +16,34 @@ $page_title = "About Us";
     <body>
       <?php include("includes/navbar.php"); ?>
 
-        
-      <div class="container text-center">
-        
-        <div class="w3-container w3-padding-32" style="padding-top:30px;">
-          <p></p>
-          <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">A STORY ABOUT BEERS</h2>
-        </div>
-        <p class="ingress">
-        <h3>Oldest Beer in the world</h3>
-         Weihenstephan is a part of Freising north of Munich, Germany. Weihenstephan is known for: the Benedictine Weihenstephan Abbey, founded 725, which established the oldest still-operating brewery in the world in 1040 (see History of beer).
-        
-        <h3>How did beer get its name?</h3>
-        The intoxicant known in English as `beer' takes its name from the Latin `bibere' (by way of the German `bier') meaning `to drink' and the Spanish word for beer, cerveza' comes from the Latin word `cerevisia' for `of beer', giving some indication of the long span human beings have been enjoying the drink.
-        </p>
-      </div>
-      <img src="/images/about/beer.jpg" width="1600" height="800"></img>
-    </body>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="/images/International-Beer-Social-Media-port.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Beers World</h1><br>
+      <h5 class="w3-center">Tradition since 2010</h5>
+      <p class="w3-large">Beers World was founded in blabla by Mr. Smith in Vietnam.
+      <p class="w3-large w3-text-grey w3-hide-medium">Beers World is an Vietnamese retail chain of liquor stores owned by Mr. Smith. 
+      Beers World, is an acronym for international Beers. 
+      Beers World is the largest liquor retailer in Vietnam with 2 stores nationally. </p>
+    </div>
+    
+  </div>
+  
+  <hr>
+
+ <div class="row"></div>
+    </div> 
     <?php include("includes/footer.php"); ?>
+
+        
+     
+    </body>
 </html>
