@@ -1,6 +1,7 @@
  <!-- The Contact Section -->
+
  <div id="contact" class="jumbotron jumbotron-fluid text-center" style="width:100%; margin-bottom:0">
-    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <h2 class="w3-wide w3-center"  style="padding-top:50px;" >CONTACT</h2>
     <p class="w3-opacity w3-center"><i>We have two stores in the country!</i></p>
     <div class="w3-row ">
       

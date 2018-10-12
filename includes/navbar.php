@@ -13,7 +13,7 @@ $right_navigation = $nav_obj -> getNavigationRightItems();
   <form class="w3-left"  method="get" action="search.php">
     <div class="input-group" style="padding-left: 50px; padding-right: 150px; margin-top: 0;">
     <input class="form-control" type="search" name="keywords" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </div>
   </form>
       <?php

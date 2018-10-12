@@ -26,8 +26,8 @@
     <div class="carousel-item">
       <img src="images/banner/b3.jpg" alt="New York" width="1920" height="840">
       <div class="carousel-caption">
-        <h3></h3>
-        <p></p>
+        <h3>MEMBER OFFERS</h3>
+        <p>A selection of beers from around the world including favourites from Mexico, Europe and more.</p>
       </div>   
     </div>
   </div>

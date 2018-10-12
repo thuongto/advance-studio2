@@ -202,19 +202,28 @@ function getCartContents(){
       let totalPrice = response.total;
       let totalTemplate = `<div class="row mt-4">
         <div class="col">Total</div>
+        
         <div class="col-8 col-sm-6 col-md-4">
           <div class="input-group w-auto">
             <div class="input-group-prepend">
               <span class="input-group-text">$</span>
             </div>
+            
             <input name="cart-total" id="cart-total" class="form-control text-right" type="text" value="${totalPrice}" readonly>
+            
             <div class="input-group-append">
               <!--add data to the checkout button-->
-              <button class="btn btn-outline-success" id="checkout-button" >Checkout</button>
+
+              
+              <script src="https://cdn.pinpayments.com/pin.v2.js"></script>
+<a class="pin-payment-button" href="https://pay.pinpayments.com/qkbo/test?amount=${totalPrice}&amp;amount_editable=false&amp;currency=AUD&amp;success_url=https://advance-studio2-thuongto.c9users.io/thankyou.php"><img src="https://pinpayments.com/pay-button.png" alt="Pay Now" width="86" height="38"></a>
+              
+              
+           
             </div>
           <div>
         </div>
-      </div>`;
+        </div>`;
       //add the total price to shopping list items 
       $('#shopping-list').append(totalTemplate);
       return true;

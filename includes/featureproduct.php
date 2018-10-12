@@ -8,7 +8,7 @@
           <div class="card-body">
             <h5 class="card-title">Budweiser</h5>
             <p class="card-text" style="font-size: 14px"></p>
-            <a href="productdetails.php?product_id=18" class="btn btn-outline-info" style="font-size: 16px">More Info</a>
+            <a href="productdetails.php?product_id=16" class="btn btn-outline-info" style="font-size: 16px">More Info</a>
           </div>
         </div>
         <div class="card" style="width:600px">
@@ -16,7 +16,7 @@
           <div class="card-body">
             <h5 class="card-title">Corona</h5>
             <p class="card-text" style="font-size: 14px"></p>
-            <a href="productdetails.php?product_id=16" class="btn btn-outline-info" style="font-size: 16px">More Info</a>
+            <a href="productdetails.php?product_id=18" class="btn btn-outline-info" style="font-size: 16px">More Info</a>
           </div>
         </div>
         <div class="card" style="width:600px">

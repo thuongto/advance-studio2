@@ -5,7 +5,7 @@ include('autoloader.php');
 if(!$_SESSION["account_id"]){
   header("location:index.php");
 }
-$page_title = "Shopping Cart";
+$page_title = "Thank you!";
 ?>
 
 <!doctype html>
@@ -13,18 +13,17 @@ $page_title = "Shopping Cart";
   <?php include ('includes/head.php'); ?>
   <body>
     <?php include('includes/navbar.php'); ?>
-    
-   <div style="margin-top: 100px" class="container content">
+    <div style="margin-top: 100px" class="container content">
     <div class="container" id="shopping-list">
       
     </div>
   </div>
   
+    <center><h1>Thank you for shopping with us!</h1></center>
   
-    <!--<script src="/js/shopping-cart-page.js"></script>-->
-    <script src="/js/shopping-cart-page2.js"></script>
+  
     <br>
     <br>
     <?php include("includes/footer.php"); ?>
   </body>
-  </html>
+</html>

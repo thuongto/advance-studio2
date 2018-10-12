@@ -3,9 +3,9 @@ function updateCount( tgt, count ){
   if( tgt == 'shoppingcart' ){
     $('#cart-count').text( count );
   }
-  if( tgt == 'wishlist'){
-    $('#wish-count').text( count );
-  }
+  // if( tgt == 'wishlist'){
+  //   $('#wish-count').text( count );
+  // }
 }
 
 $(document).ready(
@@ -19,11 +19,11 @@ $(document).ready(
     $('#shopping-form').click(
       (event) => {
         //add spinner to the button
-        const spinner = '<img class="icon spinner" src="/images/graphics/icons/moc-spin-circle.png">';
+        //const spinner = '<img class="icon spinner" src="/images/graphics/icons/moc-spin-circle.png">';
         //get the value of the target button either 'shoppingcart' or 'wishlist'
         let tgtVal = $(event.target).val();
         if( tgtVal == 'shoppingcart'){
-          $(event.target).append(spinner);
+          //$(event.target).append(spinner);
           //disable button to prevent double clicking
           $(event.target).attr('disabled',true);
           //get qty and product_id
@@ -43,13 +43,13 @@ $(document).ready(
             console.log(response);
             if(response.success){
               //successful
-              // update the count in navbar
+              //update the count in navbar
               //use tgtVal to tell wishlist and cart apart
               updateCount( tgtVal, response.cart_count );
               //remove the spinner
-              $('.spinner').remove();
+              //$('.spinner').remove();
               //reenable the button
-              
+              $(event.target).removeAttribute("disabled");
             }
             else{
               //unsuccessful
@@ -68,34 +68,34 @@ $(document).ready(
               (dest) ? window.location.href = url : window.location.href='index.php';
             }
           });
-          
         }
-        if( tgtVal == 'wishlist' ){
-          $(event.target).append(spinner);
-          //disable button to prevent double clicking
-          $(event.target).attr('disabled',true);
+        
+        // if( tgtVal == 'wishlist' ){
+        //   $(event.target).append(spinner);
+        //   //disable button to prevent double clicking
+        //   $(event.target).attr('disabled',true);
           
-          //get product id
-          const productId = $('input[name="product_id"]').val();
-          //create data object to send via ajax
-          const wishData = { productId : productId, action: 'add' };
+        //   //get product id
+        //   const productId = $('input[name="product_id"]').val();
+        //   //create data object to send via ajax
+        //   const wishData = { productId : productId, action: 'add' };
           
-          //send data via ajax request\
-          $.ajax({
-            url: '/ajax/wishlist.ajax.php',
-            method: 'post',
-            dataType: 'json',
-            data: wishData
-          })
-          .done((response) => {
-            if(response.success){
-              //successful
-            }
-            else{
-              //if error because user is not logged in, redirect to login with url parameters
-            }
-          });
-        }
+        //   //send data via ajax request\
+        //   $.ajax({
+        //     url: '/ajax/wishlist.ajax.php',
+        //     method: 'post',
+        //     dataType: 'json',
+        //     data: wishData
+        //   })
+        //   .done((response) => {
+        //     if(response.success){
+        //       //successful
+        //     }
+        //     else{
+        //       //if error because user is not logged in, redirect to login with url parameters
+        //     }
+        //   });
+        // }
       }  
     );
   }  

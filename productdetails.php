@@ -1,6 +1,5 @@
 <?php
 include("autoloader.php");
-session_start();
 
 if( isset($_GET["product_id"]) ){
   
@@ -8,15 +7,12 @@ if( isset($_GET["product_id"]) ){
   
   $product_detail = new ProductDetail( $product_id );
   $product = $product_detail -> product;  
-  $product_id = $product[0]["id"];
+  //$product_id = $product[0]["id"];
   $product_name = $product[0]["name"];
   $product_price = $product[0]["price"];
   $product_description = $product[0]["description"];
 }
-else{
-  echo "You will be redirected to the home page after 5 seconds";
-  header( "location:index.php" );
-}
+
 
 $page_title = $product_name;
 ?>
@@ -123,8 +119,8 @@ $page_title = $product_name;
     
     
     <?php include("includes/featureproduct.php"); ?>
-    <?php include("includes/footer.php"); ?>
+    
 
   </body>
 </html>
-
+<?php include("includes/footer.php"); ?>

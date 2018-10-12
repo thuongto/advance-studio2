@@ -2,20 +2,8 @@
   $products_obj = new Products();
   $products = $products_obj -> getProducts();
   
-  //germany
-  $germanyproducts = $products_obj -> getProductById();
-  //new zealand
-  $newzrproduct = $products_obj -> getNewZProductById();
-  //fance
-  $frproduct = $products_obj -> getFranceProductById();
-  //aus
-  $aproduct = $products_obj -> getAusProductById();
-  
   $total_items = $products_obj -> total_products;
-  $total_gproducts = $products_obj -> total_gproducts;
-  $total_nproducts = $products_obj -> total_nproducts;
-  $total_fproducts= $products_obj -> total_fproducts;
-  $total_aproducts= $products_obj -> total_aproducts;
+  
 ?>
 
   <!--Product List -->
@@ -26,7 +14,7 @@
   <?php
     echo "<div class=\"row\" style=\"width:80%;\">
             <div class=\"col navbar\">
-              <p class=\"navbar-text\">Total of $total_products products</p>
+              <p class=\"navbar-text\">Total of $total_items products</p>
             </div>
           </div>";
     if( count($products) > 0 ){
